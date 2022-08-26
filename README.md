@@ -1,10 +1,16 @@
 # simple-http
 
-A Clojure library designed to ... well, that part is up to you.
+Experiments with Clojure concurrent features in a simple http server
 
 ## Usage
 
-FIXME
+Run the following to run the server in a port:
+
+```bash
+lein run 10000
+```
+
+Open in the browser the path to the server: http://localhost:10000/ 
 
 ## License
 
