@@ -41,6 +41,6 @@
 
 (defn -main
   [port]
-  (let [server-connect (server-socket (Integer/parseInt port))
-        socket (accept server-connect)]
-    (do (run socket))))
+  (let [server-connect (server-socket (Integer/parseInt port))]
+    (while true
+      (do (future (run (accept server-connect)))))))
