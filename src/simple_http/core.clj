@@ -26,8 +26,8 @@
   (write socket (slurp (io/resource "index.html"))))
 
 (defn -main
-  [& _args]
-  (let [server (ServerSocket. 8080)]
+  [& [port]]
+  (let [server (ServerSocket. (Integer/parseInt (or port "8080")))]
     (while true
       (let [connection (.accept server)]
         (.start (Thread. #(handle connection)))))))
